@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — Домашний Уют</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <iframe src="player.html" style="display:none;" id="music-frame"></iframe>
+  <header class="site-header">
+    <div class="logo">🏠 Домашний Уют</div>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html" class="active">Каталог</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-controls">
+      <button id="theme-toggle" aria-label="Сменить тему">🌞</button>
+      <div class="music-control">
+        <button id="music-toggle" aria-label="Мелодия">🎵 Мелодия</button>
+        <div id="track-menu" class="hidden">
+          <button data-src="audio/cozy1.mp3">спокойный</button>
+          <button data-src="audio/jazz.mp3">Джазз</button>
+          <button data-src="audio/lofi.mp3">Лофи</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-content">
+    <section>
+      <h1>Наш каталог мебели</h1>
+      <p>Мы предлагаем широкий ассортимент мебели для создания настоящего домашнего уюта. Ниже представлена таблица с примерами нашей продукции:</p>
+      <div class="table-wrapper">
+            <table class="fancy-table">
+                <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Тип</th>
+                    <th>Материал</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Уютный диван</td>
+                    <td>Гостиная</td>
+                    <td>Велюр</td>
+                    <td>32 000 ₽</td>
+                </tr>
+                <tr>
+                    <td>Обеденный стол</td>
+                    <td>Кухня</td>
+                    <td>Дуб</td>
+                    <td>21 500 ₽</td>
+                </tr>
+                <tr>
+                    <td>Кровать-комфорт</td>
+                    <td>Спальня</td>
+                    <td>Массив</td>
+                    <td>45 000 ₽</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+      <h2>Почему выбирают нас?</h2>
+      <ul class="custom-markers">
+        <li>Экологически чистые материалы</li>
+        <li>Современный минималистичный стиль</li>
+        <li>Гарантия качества — 5 лет</li>
+      </ul>
+
+      <p>В нашей коллекции сочетается утонченность, комфорт и долговечность. Мы верим, что мебель — это не просто предмет интерьера, а отражение стиля жизни.</p>
+
+    </section>
+
+    <section class="product-gallery">
+        <img src="media/kreslo.jpg" alt="Кресло">
+        <img src="media/stol.jpg" alt="Стол">
+        <img src="media/divan.jpg" alt="Диван">
+        <img src="media/shkaf.jpg" alt="Шкаф">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Домашний Уют. Все права защищены.</p>
+  </footer>
+
+  <audio id="global-audio" autoplay loop></audio>
+</body>
+</html>

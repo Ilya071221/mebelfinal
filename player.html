@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Плеер — Домашний Уют</title>
+</head>
+<body>
+  <audio id="global-audio" autoplay loop></audio>
+
+  <script>
+    const audio = document.getElementById("global-audio");
+
+    // Восстановление сохранённого трека и позиции
+    const savedSrc = localStorage.getItem("music-src");
+    const savedTime = localStorage.getItem("music-time");
+
+    if (savedSrc) {
+      audio.src = savedSrc;
+      audio.currentTime = savedTime ? parseFloat(savedTime) : 0;
+      audio.play().catch(() => {});
+    }
+
+    // Сохраняем позицию каждые 2 секунды
+    setInterval(() => {
+      if (!audio.paused) {
+        localStorage.setItem("music-time", audio.currentTime);
+      }
+    }, 2000);
+
+    // Принимаем трек из основного окна
+    window.addEventListener("message", (event) => {
+      if (event.data.type === "setTrack") {
+        audio.src = event.data.src;
+        audio.currentTime = 0;
+        audio.play();
+        localStorage.setItem("music-src", event.data.src);
+        localStorage.setItem("music-time", 0);
+      }
+    });
+  </script>
+</body>
+</html>

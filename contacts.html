@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контакты — Домашний Уют</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <iframe src="player.html" style="display:none;" id="music-frame"></iframe>
+  <header class="site-header">
+    <div class="logo">🏠 Домашний Уют</div>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="gallery.html">Галерея</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contacts.html" class="active">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-controls">
+      <button id="theme-toggle" aria-label="Сменить тему">🌞</button>
+      <div class="music-control">
+        <button id="music-toggle" aria-label="Мелодия">🎵 Мелодия</button>
+        <div id="track-menu" class="hidden">
+          <button data-src="audio/cozy1.mp3">спокойный</button>
+          <button data-src="audio/jazz.mp3">Джазз</button>
+          <button data-src="audio/lofi.mp3">Лофи</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contacts">
+      <h1>Контакты</h1>
+      <p><strong>Адрес:</strong> г. Москва, ул. Интерьерная, д. 25</p>
+      <p><strong>Email:</strong> domuyut@gmail.com</p>
+
+      <h2>Напишите нам</h2>
+      <form class="contact-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Домашний Уют. Все права защищены.</p>
+  </footer>
+
+  <audio id="global-audio" autoplay loop></audio>
+  <script src="js/main.js"></script>
+</body>
+</html>

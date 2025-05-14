@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Домашний Уют</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <iframe src="player.html" style="display:none;" id="music-frame"></iframe>
+  <header class="site-header">
+    <div class="logo">🏠 Домашний Уют</div>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link" class="active">Главная</a></li>
+        <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+        <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-controls">
+      <button id="theme-toggle" aria-label="Сменить тему">🌞</button>
+      <div class="music-control">
+        <button id="music-toggle" aria-label="Мелодия">🎵 Мелодия</button>
+        <div id="track-menu" class="hidden">
+          <button data-src="audio/cozy1.mp3">спокойный</button>
+          <button data-src="audio/jazz.mp3">Джазз</button>
+          <button data-src="audio/lofi.mp3">Лофи</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Добро пожаловать в мир уюта</h1>
+      <video autoplay muted loop class="background-video">
+        <source src="media/promo.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Домашний Уют. Все права защищены.</p>
+  </footer>
+
+  <audio id="global-audio" autoplay loop></audio>
+</body>
+</html>
